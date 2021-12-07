@@ -1,6 +1,7 @@
 import { createApp } from "vue";
+import App from "./App.vue";
 //javascript宣告命名 props宣告命名
-import App from "./PropsApp.vue";
+//import App from "./PropsApp.vue";
 //props emit 如何傳值 ref寫法測試
 //import App from "./PropsAndEmit.vue";
 //directive 資料夾放置位置與寫法

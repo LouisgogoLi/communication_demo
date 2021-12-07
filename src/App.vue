@@ -1,7 +1,13 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'Home' }">Home</router-link> |
+    <router-link :to="{ name: 'PropsApp' }">PropsApp</router-link> |
+    <router-link :to="{ name: 'PropsAndEmit' }">PropsAndEmit</router-link> |
+    <router-link :to="{ name: 'DirectiveTest' }">DirectiveTest</router-link> |
+    <router-link :to="{ name: 'SlotTest' }">SlotTest</router-link> |
+    <router-link :to="{ name: 'ProviedInjectTest' }"
+      >ProviedInjectTest</router-link
+    >
   </div>
   <router-view />
 </template>

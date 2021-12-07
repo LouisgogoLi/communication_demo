@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
+import PropsApp from "@/views/PropsApp.vue";
+import PropsAndEmit from "@/views/PropsAndEmit.vue";
+import DirectiveTest from "@/views/DirectiveTest.vue";
+import SlotTest from "@/views/SlotTest.vue";
+import ProviedInjectTest from "@/views/ProviedInjectTest.vue";
 
 const routes = [
   {
@@ -8,13 +13,39 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/index.html",
+    name: "index",
+    redirect: { name: "Home" },
+  },
+  {
+    path: "/PropsApp",
+    name: "PropsApp",
+    component: PropsApp,
+  },
+  {
+    path: "/PropsAndEmit",
+    name: "PropsAndEmit",
+    component: PropsAndEmit,
+  },
+  {
+    path: "/DirectiveTest",
+    name: "DirectiveTest",
+    component: DirectiveTest,
+  },
+  {
+    path: "/SlotTest",
+    name: "SlotTest",
+    component: SlotTest,
+  },
+  {
+    path: "/ProviedInjectTest",
+    name: "ProviedInjectTest",
+    component: ProviedInjectTest,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@/views/NotFound.vue"),
   },
 ];
 
