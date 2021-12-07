@@ -37,9 +37,6 @@ export default {
 
 <style scoped>
 h1 {
-  color: white;
-  position: fixed;
-  top: 50px;
-  left: 50px;
+  color: black;
 }
 </style>
