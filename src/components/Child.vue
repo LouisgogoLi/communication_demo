@@ -1,6 +1,6 @@
 <template>
   <div>{{ injectLocation }} - {{ injectGeolocation }}</div>
-  <button @click="fnUpdateChildLocation">點我</button>
+  <button @click="injectUpdateLocation">點我</button>
 </template>
 
 <script>

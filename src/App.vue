@@ -5,7 +5,7 @@
     <router-link :to="{ name: 'PropsAndEmit' }">PropsAndEmit</router-link> |
     <router-link :to="{ name: 'DirectiveTest' }">DirectiveTest</router-link> |
     <router-link :to="{ name: 'SlotTest' }">SlotTest</router-link> |
-    <router-link :to="{ name: 'ProviedInjectTest' }"
+    <router-link :to="{ name: 'ProvideInjectTest' }"
       >ProviedInjectTest</router-link
     >
   </div>
