@@ -14,7 +14,7 @@ export default {
       latitude: 135,
     });
     const fnUpdateLocation = () => {
-      location.value = "hahaha";
+      sLocation.value = "hahaha";
     };
     provide("provideLocation", readonly(sLocation));
     provide("provideGeolocation", readonly(oGeolocation));

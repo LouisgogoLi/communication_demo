@@ -4,7 +4,7 @@ import PropsApp from "@/views/PropsApp.vue";
 import PropsAndEmit from "@/views/PropsAndEmit.vue";
 import DirectiveTest from "@/views/DirectiveTest.vue";
 import SlotTest from "@/views/SlotTest.vue";
-import ProviedInjectTest from "@/views/ProviedInjectTest.vue";
+import ProvideInjectTest from "@/views/ProvideInjectTest.vue";
 
 const routes = [
   {
@@ -38,9 +38,9 @@ const routes = [
     component: SlotTest,
   },
   {
-    path: "/ProviedInjectTest",
-    name: "ProviedInjectTest",
-    component: ProviedInjectTest,
+    path: "/ProvideInjectTest",
+    name: "ProvideInjectTest",
+    component: ProvideInjectTest,
   },
   {
     path: "/:pathMatch(.*)*",

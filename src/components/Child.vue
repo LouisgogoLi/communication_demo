@@ -1,5 +1,6 @@
 <template>
   <div>{{ injectLocation }} - {{ injectGeolocation }}</div>
+  <button @click="fnUpdateChildLocation">點我</button>
 </template>
 
 <script>
@@ -9,6 +10,7 @@ export default {
     const injectLocation = inject("provideLocation");
     const injectGeolocation = inject("provideGeolocation");
     const injectUpdateLocation = inject("provideUpdateLocation");
+
     return {
       injectLocation,
       injectGeolocation,
