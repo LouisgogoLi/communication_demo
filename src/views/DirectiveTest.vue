@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DirectiveDemo from "@/components/DirectiveDemo.vue";
+import DirectiveDemo from "@/components/DirectiveTest/DirectiveDemo.vue";
 export default {
   components: {
     DirectiveDemo,

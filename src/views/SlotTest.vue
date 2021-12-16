@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import SlotsTitle from "@/components/SlotsTitle.vue";
-import SlotDemo from "@/components/SlotDemo.vue";
+import SlotsTitle from "@/components/SlotTest/SlotsTitle.vue";
+import SlotDemo from "@/components/SlotTest/SlotDemo.vue";
 export default {
   components: { SlotsTitle, SlotDemo },
 };

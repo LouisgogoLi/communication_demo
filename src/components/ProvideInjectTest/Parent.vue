@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Child from "./Child.vue";
+import Child from "@/components/ProvideInjectTest/Child.vue";
 export default {
   components: { Child },
 };

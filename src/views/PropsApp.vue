@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import PropsTest from "@/components/PropsTest.vue";
+import PropsTest from "@/components/PropsApp/PropsTest.vue";
 import { ref, reactive } from "vue";
 export default {
   components: { PropsTest },

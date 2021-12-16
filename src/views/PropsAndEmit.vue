@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import TitleBar from "@/components/TitleBar.vue";
-import ListItem from "@/components/ListItem.vue";
-import EmitTest from "@/components/EmitTest.vue";
-import TimerBox from "@/components/TimerBox.vue";
-import DomRefTest from "@/components/DomRefTest.vue";
+import TitleBar from "@/components/PropsAndEmit/TitleBar.vue";
+import ListItem from "@/components/PropsAndEmit/ListItem.vue";
+import EmitTest from "@/components/PropsAndEmit/EmitTest.vue";
+import TimerBox from "@/components/PropsAndEmit/TimerBox.vue";
+import DomRefTest from "@/components/PropsAndEmit/DomRefTest.vue";
 import { ref, onMounted } from "vue";
 
 export default {
