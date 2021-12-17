@@ -1,5 +1,5 @@
 <template>
-  <ul :class="['box', { open: props.propsIsOpen }]">
+  <ul :class="['box', { open: props.propsIsOpen }]" v-show="props.propsIsOpen">
     <li v-for="(list, idx) in aListArr" :key="list.id">
       {{ idx + 1 }}. {{ list.name }}
     </li>
