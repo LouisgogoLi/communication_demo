@@ -1,19 +1,17 @@
 <template>
   <div>
-    <directive-demo />
+    <DirectiveDemo />
   </div>
 </template>
 
 <script>
-import DirectiveDemo from "@/components/DirectiveTest/DirectiveDemo.vue";
 export default {
-  components: {
-    DirectiveDemo,
-  },
-  setup() {
-    return {};
-  },
+  name: "DirectiveTest",
 };
+</script>
+
+<script setup>
+import DirectiveDemo from "@/components/DirectiveTest/DirectiveDemo.vue";
 </script>
 
 <style scoped>

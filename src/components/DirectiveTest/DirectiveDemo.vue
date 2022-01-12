@@ -11,16 +11,14 @@
 </template>
 
 <script>
-import { ref } from "vue";
 export default {
-  setup() {
-    const nNum = ref(32859004247);
-
-    return {
-      nNum,
-    };
-  },
+  name: "DirectiveDemo",
 };
+</script>
+
+<script setup>
+import { ref } from "vue";
+const nNum = ref(32859004247);
 </script>
 
 <style scoped>

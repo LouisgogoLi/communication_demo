@@ -1,12 +1,15 @@
 <template>
-  <child />
+  <Child />
 </template>
 
 <script>
-import Child from "@/components/ProvideInjectTest/Child.vue";
 export default {
-  components: { Child },
+  name: "Parent",
 };
 </script>
 
-<style></style>
+<script setup>
+import Child from "@/components/ProvideInjectTest/Child.vue";
+</script>
+
+<style scoped></style>

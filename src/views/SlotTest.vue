@@ -1,9 +1,9 @@
 <template>
   <div>
-    <slots-title>Louis</slots-title>
-    <slots-title>Mike</slots-title>
-    <slots-title>Tedy</slots-title>
-    <slot-demo>
+    <SlotsTitle>Louis</SlotsTitle>
+    <SlotsTitle>Mike</SlotsTitle>
+    <SlotsTitle>Tedy</SlotsTitle>
+    <SlotDemo>
       <template #header>
         <h2 class="colorRed">Here might be a page title</h2>
       </template>
@@ -17,8 +17,8 @@
       <template #footer>
         <p class="colorRed">這是footer</p>
       </template>
-    </slot-demo>
-    <slot-demo>
+    </SlotDemo>
+    <SlotDemo>
       <template #header>
         <h2 class="colorRed">Here might be a page title</h2>
       </template>
@@ -32,8 +32,8 @@
       <template #footer>
         <p class="colorRed">這是footer</p>
       </template>
-    </slot-demo>
-    <slot-demo>
+    </SlotDemo>
+    <SlotDemo>
       <template #header>
         <h2 class="colorRed">Here might be a page title</h2>
       </template>
@@ -47,16 +47,19 @@
       <template #footer>
         <p class="colorRed">這是footer</p>
       </template>
-    </slot-demo>
+    </SlotDemo>
   </div>
 </template>
 
 <script>
+export default {
+  name: "SlotTest",
+};
+</script>
+
+<script setup>
 import SlotsTitle from "@/components/SlotTest/SlotsTitle.vue";
 import SlotDemo from "@/components/SlotTest/SlotDemo.vue";
-export default {
-  components: { SlotsTitle, SlotDemo },
-};
 </script>
 
 <style scoped>

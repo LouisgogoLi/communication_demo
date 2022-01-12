@@ -4,21 +4,20 @@
 
 <script>
 export default {
-  props: {
-    propsHandListShow: {
-      type: Function,
-      default: () => {},
-    },
-  },
-  setup(props) {
-    return {
-      props,
-    };
-  },
+  name: "TitleBar",
 };
 </script>
 
-<style>
+<script setup>
+const props = defineProps({
+  propsHandListShow: {
+    type: Function,
+    default: () => {},
+  },
+});
+</script>
+
+<style scoped>
 .title {
   cursor: pointer;
   display: flex;

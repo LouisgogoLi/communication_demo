@@ -4,20 +4,16 @@
 </template>
 
 <script>
-import { inject } from "vue";
 export default {
-  setup() {
-    const injectLocation = inject("provideLocation");
-    const injectGeolocation = inject("provideGeolocation");
-    const injectUpdateLocation = inject("provideUpdateLocation");
-
-    return {
-      injectLocation,
-      injectGeolocation,
-      injectUpdateLocation,
-    };
-  },
+  name: "Child",
 };
 </script>
 
-<style></style>
+<script setup>
+import { inject } from "vue";
+const injectLocation = inject("provideLocation");
+const injectGeolocation = inject("provideGeolocation");
+const injectUpdateLocation = inject("provideUpdateLocation");
+</script>
+
+<style scoped></style>

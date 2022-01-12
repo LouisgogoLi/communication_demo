@@ -1,14 +1,20 @@
 <template>
   <div>
-    <title-bar :propsHandListShow="fnHandListShow" />
-    <list-item :propsIsOpen="bIsOpen" />
-    <emit-test @emitTestNumber="fnEmitTestNumber" />
-    <timer-box @emitTimerNumber="fnTimerNumber" />
-    <dom-ref-test ref="getChildDomRefTest" />
+    <TitleBar :propsHandListShow="fnHandListShow" />
+    <ListItem :propsIsOpen="bIsOpen" />
+    <EmitTest @emitTestNumber="fnEmitTestNumber" />
+    <TimerBox @emitTimerNumber="fnTimerNumber" />
+    <DomRefTest ref="getChildDomRefTest" />
   </div>
 </template>
 
 <script>
+export default {
+  name: "PropsAndEmit",
+};
+</script>
+
+<script setup>
 import TitleBar from "@/components/PropsAndEmit/TitleBar.vue";
 import ListItem from "@/components/PropsAndEmit/ListItem.vue";
 import EmitTest from "@/components/PropsAndEmit/EmitTest.vue";
@@ -16,43 +22,25 @@ import TimerBox from "@/components/PropsAndEmit/TimerBox.vue";
 import DomRefTest from "@/components/PropsAndEmit/DomRefTest.vue";
 import { ref, onMounted } from "vue";
 
-export default {
-  components: {
-    TitleBar,
-    ListItem,
-    EmitTest,
-    TimerBox,
-    DomRefTest,
-  },
-  setup() {
-    const bIsOpen = ref(true);
+const bIsOpen = ref(true);
 
-    const fnHandListShow = () => {
-      bIsOpen.value = !bIsOpen.value;
-    };
-
-    const fnEmitTestNumber = (num) => {
-      console.log(num.value);
-    };
-
-    const fnTimerNumber = (num) => {
-      console.log("Time is over..", num.value);
-    };
-
-    const getChildDomRefTest = ref(null);
-
-    onMounted(() => {
-      console.log(getChildDomRefTest.value.sConts);
-    });
-    return {
-      bIsOpen,
-      fnHandListShow,
-      fnEmitTestNumber,
-      fnTimerNumber,
-      getChildDomRefTest,
-    };
-  },
+const fnHandListShow = () => {
+  bIsOpen.value = !bIsOpen.value;
 };
+
+const fnEmitTestNumber = (num) => {
+  console.log(num.value);
+};
+
+const fnTimerNumber = (num) => {
+  console.log("Time is over..", num.value);
+};
+
+const getChildDomRefTest = ref(null);
+
+onMounted(() => {
+  console.log(getChildDomRefTest.value.sConts);
+});
 </script>
 
 <style scoped>
