@@ -1,5 +1,5 @@
 <template>
-  <Parent />
+  <ParentComponent />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <script setup>
-import Parent from "@/components/ProvideInjectTest/Parent.vue";
+import ParentComponent from "@/components/ProvideInjectTest/ParentComponent.vue";
 import { provide, ref, reactive, readonly } from "vue";
 
 const sLocation = ref("North Pole");

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/Home.vue";
+import Home from "@/views/HomeView.vue";
 import PropsApp from "@/views/PropsApp.vue";
 import PropsAndEmit from "@/views/PropsAndEmit.vue";
 import DirectiveTest from "@/views/DirectiveTest.vue";

@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <nav>
     <router-link :to="{ name: 'Home' }">Home</router-link> |
     <router-link :to="{ name: 'PropsApp' }">PropsApp</router-link> |
     <router-link :to="{ name: 'PropsAndEmit' }">PropsAndEmit</router-link> |
@@ -8,7 +8,7 @@
     <router-link :to="{ name: 'ProvideInjectTest' }"
       >ProviedInjectTest</router-link
     >
-  </div>
+  </nav>
   <router-view />
 </template>
 
@@ -27,7 +27,7 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+nav {
   padding: 30px;
 
   a {

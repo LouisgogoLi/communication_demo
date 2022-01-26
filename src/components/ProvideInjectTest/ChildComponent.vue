@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: "Child",
+  name: "ChildComponent",
 };
 </script>
 
