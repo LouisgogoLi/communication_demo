@@ -1,12 +1,9 @@
 <template>
-  <div>
+  <div class="slotpageclass">
     <SlotTable
-      :class="sSlotElTableClass1"
+      class="slotElTable1"
       :propsTableData="tableData1"
-      :propsHeaderCellStyle="headerCellStyle1"
-      :propsTableRowStyle="tableRowStyle1"
       :propsDefaultSort="oDefaultSort1"
-      :propsEmptyValue="sEmptyValue"
     >
       <template #tableDefault>
         <el-table-column
@@ -85,6 +82,33 @@
         </el-table-column>
       </template>
     </SlotTable>
+    <SlotTable class="slotElTable2" :propsTableData="tableData2">
+      <template #tableDefault>
+        <el-table-column prop="salaryItemName" label="薪資項目名稱">
+        </el-table-column>
+        <el-table-column prop="sentMoney" label="應發金額"> </el-table-column>
+        <el-table-column prop="deductMoney" label="應扣金額"> </el-table-column>
+        <el-table-column prop="note" label="備註"> </el-table-column>
+      </template>
+    </SlotTable>
+    <SlotTable
+      class="slotElTable3"
+      :propsTableData="tableData3"
+      :propsEmptyValue="sEmptyValue3"
+    >
+      <template #tableDefault>
+        <el-table-column prop="note" label="備註"> </el-table-column>
+      </template>
+    </SlotTable>
+    <SlotTable class="slotElTable4" :propsTableData="tableData4">
+      <template #tableDefault>
+        <el-table-column prop="salaryItemName" label="薪資項目名稱">
+        </el-table-column>
+        <el-table-column prop="sentMoney" label="應發金額"> </el-table-column>
+        <el-table-column prop="deductMoney" label="應扣金額"> </el-table-column>
+        <el-table-column prop="note" label="備註"> </el-table-column>
+      </template>
+    </SlotTable>
   </div>
 </template>
 
@@ -98,9 +122,6 @@ export default {
 import SlotTable from "@/components/slotTest/slotElTable/SlotTable.vue";
 
 import { ref, reactive } from "vue";
-
-const sSlotElTableClass1 = ref("slotElTable1");
-const sEmptyValue = ref("沒有資料");
 
 const tableData1 = [
   {
@@ -190,34 +211,112 @@ const tableData1 = [
   },
 ];
 
-//row為某一行的除操作外的全部數據
-//column為某一列的屬性
-//rowIndex為某一行(從0開始數起)
-//columnIndex為某一列(從0開始數起)
-const headerCellStyle1 = ({ row, column, rowIndex, columnIndex }) => {
-  if (columnIndex === 2 && column.order) {
-    return { color: "#1e8ece", background: "#e5ebf3" };
-  } else if (columnIndex === 3 && column.order) {
-    return { color: "#1e8ece", background: "#e5ebf3" };
-  } else {
-    return { color: "#566374", background: "#e5ebf3" };
-  }
-};
-
-const tableRowStyle1 = ({ row, column, rowIndex, columnIndex }) => {
-  if (rowIndex % 2 === 0) {
-    return { background: "#f6f6f6" };
-  } else {
-    return { background: "#f8fafb" };
-  }
-};
-
 const oDefaultSort1 = reactive({ prop: "accountDate", order: "ascending" });
+
+const tableData2 = [
+  {
+    salaryItemName: "本薪",
+    sentMoney: "87,000",
+    deductMoney: "-",
+    note: "我是備註文字1",
+  },
+  {
+    salaryItemName: "健保費",
+    sentMoney: "-",
+    deductMoney: "3,500",
+    note: "我是備註文字2",
+  },
+  {
+    salaryItemName: "勞保費",
+    sentMoney: "-",
+    deductMoney: "3,600",
+    note: "我是備註文字3",
+  },
+  {
+    salaryItemName: "總計",
+    sentMoney: "80,000",
+    deductMoney: "-",
+    note: "我是備註文字4",
+  },
+];
+
+const tableData3 = [];
+const sEmptyValue3 = ref("沒有備註資料");
+
+const tableData4 = [
+  {
+    salaryItemName: "本薪",
+    sentMoney: "87,000",
+    deductMoney: "-",
+    note: "我是備註文字1",
+  },
+  {
+    salaryItemName: "健保費",
+    sentMoney: "-",
+    deductMoney: "3,500",
+    note: "我是備註文字2",
+  },
+  {
+    salaryItemName: "勞保費",
+    sentMoney: "-",
+    deductMoney: "3,600",
+    note: "我是備註文字3",
+  },
+  {
+    salaryItemName: "總計",
+    sentMoney: "80,000",
+    deductMoney: "-",
+    note: "我是備註文字4",
+  },
+];
 </script>
 
 <style scoped>
+.slotpageclass {
+  margin: 30px;
+}
 .slotElTable1 :deep(.normalElTable) {
-  width: 100%;
   margin-bottom: 10px;
+}
+.slotElTable1 :deep(.normalElTable .transferType) {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background: #06c5c5;
+  border-radius: 15px;
+}
+.slotElTable2 {
+  margin-bottom: 30px;
+}
+/* 設置單數行 class */
+.slotElTable2 :deep(.normalElTable .oddrow) {
+  background-color: #fff;
+}
+/* 設置雙數行 class */
+.slotElTable2 :deep(.normalElTable .evenrow) {
+  background-color: #f6f6f6;
+}
+.slotElTable3 {
+  margin-bottom: 30px;
+}
+.slotElTable4 {
+  margin-bottom: 60px;
+}
+.slotElTable4 :deep(.normalElTable .headerCellClass) {
+  background: #cffcc9;
+  color: #4808f8;
+}
+/* 設置單數行 class */
+.slotElTable4 :deep(.normalElTable .oddrow) {
+  background-color: rgb(223, 247, 7);
+  color: rgb(17, 5, 5);
+}
+/* 設置雙數行 class */
+.slotElTable4 :deep(.normalElTable .evenrow) {
+  background-color: #be022b;
+  color: #fff;
 }
 </style>

@@ -186,9 +186,7 @@ const tableData = [
 //rowIndex為某一行(從0開始數起)
 //columnIndex為某一列(從0開始數起)
 const headerCellStyle = ({ row, column, rowIndex, columnIndex }) => {
-  if (columnIndex === 2 && column.order) {
-    return { color: "#1e8ece" };
-  } else if (columnIndex === 3 && column.order) {
+  if (column.order) {
     return { color: "#1e8ece" };
   }
 };
@@ -245,11 +243,11 @@ const tableRowClassName = ({ row, column, rowIndex, columnIndex }) => {
   background: #e5ebf3;
   color: #566374;
 }
-//設置單數行 class
+/* 設置單數行 class */
 .normalElTable :deep(.oddrow) {
   background-color: #f6f6f6;
 }
-//設置雙數行 class
+/* 設置雙數行 class */
 .normalElTable :deep(.evenrow) {
   background-color: #f8fafb;
 }

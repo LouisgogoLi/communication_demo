@@ -4,7 +4,8 @@
       :data="props.propsTableData"
       class="normalElTable"
       :header-cell-style="props.propsHeaderCellStyle"
-      :row-style="props.propsTableRowStyle"
+      :header-cell-class-name="props.propsHeaderCellClassName"
+      :row-class-name="props.propsTableRowClassName"
       :default-sort="props.propsDefaultSort"
     >
       <slot name="tableDefault"></slot>
@@ -29,11 +30,27 @@ const props = defineProps({
   },
   propsHeaderCellStyle: {
     type: Function,
-    default: () => {},
+    default: ({ row, column, rowIndex, columnIndex }) => {
+      if (column.order) {
+        return { color: "#1e8ece" };
+      }
+    },
   },
-  propsTableRowStyle: {
+  propsHeaderCellClassName: {
     type: Function,
-    default: () => {},
+    default: ({ row, column, rowIndex, columnIndex }) => {
+      return "headerCellClass";
+    },
+  },
+  propsTableRowClassName: {
+    type: Function,
+    default: ({ row, column, rowIndex, columnIndex }) => {
+      if (rowIndex % 2 === 0) {
+        return "oddrow";
+      } else {
+        return "evenrow";
+      }
+    },
   },
   propsDefaultSort: {
     type: Object,
@@ -49,15 +66,8 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.normalElTable :deep(.transferType) {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #fff;
-  background: #06c5c5;
-  border-radius: 15px;
+.normalElTable {
+  width: 100%;
 }
 .normalElTable :deep(th) {
   padding-top: 10px;
@@ -81,6 +91,19 @@ const props = defineProps({
     padding-top: 10px;
     padding-bottom: 10px;
   }
+}
+/* 設置header class */
+.normalElTable :deep(.headerCellClass) {
+  background: #e5ebf3;
+  color: #566374;
+}
+/* 設置單數行 class */
+.normalElTable :deep(.oddrow) {
+  background-color: #f6f6f6;
+}
+/* 設置雙數行 class */
+.normalElTable :deep(.evenrow) {
+  background-color: #f8fafb;
 }
 .normalElTable :deep(.el-table__empty-block) {
   min-height: 50px;
