@@ -1,14 +1,5 @@
 <template>
-  <nav>
-    <router-link :to="{ name: 'Home' }">Home</router-link> |
-    <router-link :to="{ name: 'PropsApp' }">PropsApp</router-link> |
-    <router-link :to="{ name: 'PropsAndEmit' }">PropsAndEmit</router-link> |
-    <router-link :to="{ name: 'DirectiveTest' }">DirectiveTest</router-link> |
-    <router-link :to="{ name: 'SlotTest' }">SlotTest</router-link> |
-    <router-link :to="{ name: 'ProvideInjectTest' }"
-      >ProviedInjectTest</router-link
-    >
-  </nav>
+  <HeaderComponet />
   <router-view />
 </template>
 
@@ -18,13 +9,25 @@ export default {
 };
 </script>
 
+<script setup>
+import HeaderComponet from "@/components/publicComponents/header/HeaderComponet.vue";
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+}
+
+body,
+input,
+select {
+  font-family: "Noto Sans TC", Helvetica, "微軟正黑體";
+  line-height: 140%;
+  font-weight: 400;
+  color: #333;
+  background-color: #f8fafb;
+  margin: 0;
+  padding: 0;
 }
 
 nav {

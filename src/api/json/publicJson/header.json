@@ -1,0 +1,76 @@
+[
+  {
+    "tab_id": "0",
+    "router_name": "Home",
+    "name": "首頁",
+    "click": true,
+    "auth": true,
+    "List": []
+  },
+  {
+    "tab_id": "1",
+    "router_name": "PropsApp",
+    "name": "PropsApp",
+    "click": true,
+    "auth": true,
+    "List": []
+  },
+  {
+    "tab_id": "2",
+    "router_name": "PropsAndEmit",
+    "name": "PropsAndEmit",
+    "click": true,
+    "auth": true,
+    "List": []
+  },
+  {
+    "tab_id": "3",
+    "router_name": "DirectiveTest",
+    "name": "DirectiveTest",
+    "click": true,
+    "auth": true,
+    "List": []
+  },
+  {
+    "tab_id": "4",
+    "router_name": "SlotTest",
+    "name": "SlotTest",
+    "click": true,
+    "auth": true,
+    "List": [
+      {
+        "tab_id": "4_1",
+        "router_name": "SlotElTable",
+        "name": "SlotELTable測試",
+        "click": true,
+        "auth": true,
+        "List": []
+      }
+    ]
+  },
+  {
+    "tab_id": "5",
+    "router_name": "ProvideInjectTest",
+    "name": "ProvideInjectTest",
+    "click": true,
+    "auth": true,
+    "List": []
+  },
+  {
+    "tab_id": "6",
+    "router_name": "elementTest",
+    "name": "elementTest",
+    "click": false,
+    "auth": true,
+    "List": [
+      {
+        "tab_id": "6_1",
+        "router_name": "tableView",
+        "name": "elementTable測試",
+        "click": true,
+        "auth": true,
+        "List": []
+      }
+    ]
+  }
+]

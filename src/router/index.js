@@ -1,10 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/HomeView.vue";
-import PropsApp from "@/views/PropsApp.vue";
-import PropsAndEmit from "@/views/PropsAndEmit.vue";
-import DirectiveTest from "@/views/DirectiveTest.vue";
-import SlotTest from "@/views/SlotTest.vue";
-import ProvideInjectTest from "@/views/ProvideInjectTest.vue";
 
 const routes = [
   {
@@ -20,27 +15,37 @@ const routes = [
   {
     path: "/PropsApp",
     name: "PropsApp",
-    component: PropsApp,
+    component: () => import("@/views/propsApp/PropsApp.vue"),
   },
   {
     path: "/PropsAndEmit",
     name: "PropsAndEmit",
-    component: PropsAndEmit,
+    component: () => import("@/views/propsAndEmit/PropsAndEmit.vue"),
   },
   {
     path: "/DirectiveTest",
     name: "DirectiveTest",
-    component: DirectiveTest,
+    component: () => import("@/views/directiveTest/DirectiveTest.vue"),
   },
   {
     path: "/SlotTest",
     name: "SlotTest",
-    component: SlotTest,
+    component: () => import("@/views/slotTest/SlotTest.vue"),
+  },
+  {
+    path: "/SlotTest/slotElTable",
+    name: "SlotElTable",
+    component: () => import("@/views/slotTest/slotElTable/SlotElTable.vue"),
   },
   {
     path: "/ProvideInjectTest",
     name: "ProvideInjectTest",
-    component: ProvideInjectTest,
+    component: () => import("@/views/provideInjectTest/ProvideInjectTest.vue"),
+  },
+  {
+    path: "/elementTest/tableView",
+    name: "tableView",
+    component: () => import("@/views/elementTest/tableView/TableView.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

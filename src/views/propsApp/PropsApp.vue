@@ -17,7 +17,7 @@ export default {
 </script>
 
 <script setup>
-import PropsTest from "@/components/PropsApp/PropsTest.vue";
+import PropsTest from "@/components/propsApp/PropsTest.vue";
 import { ref, reactive } from "vue";
 
 const sTestName = ref("Hello Louis");

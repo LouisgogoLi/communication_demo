@@ -11,7 +11,7 @@ export default {
 </script>
 
 <script setup>
-import DirectiveDemo from "@/components/DirectiveTest/DirectiveDemo.vue";
+import DirectiveDemo from "@/components/directiveTest/DirectiveDemo.vue";
 </script>
 
 <style scoped>
