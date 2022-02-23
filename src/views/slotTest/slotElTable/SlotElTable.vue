@@ -271,52 +271,58 @@ const tableData4 = [
 ];
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .slotpageclass {
   margin: 30px;
 }
-.slotElTable1 :deep(.normalElTable) {
-  margin-bottom: 10px;
-}
-.slotElTable1 :deep(.normalElTable .transferType) {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #fff;
-  background: #06c5c5;
-  border-radius: 15px;
+.slotElTable1 {
+  :deep(.normalElTable) {
+    margin-bottom: 10px;
+    .transferType {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background: #06c5c5;
+      border-radius: 15px;
+    }
+  }
 }
 .slotElTable2 {
   margin-bottom: 30px;
-}
-/* 設置單數行 class */
-.slotElTable2 :deep(.normalElTable .oddrow) {
-  background-color: #fff;
-}
-/* 設置雙數行 class */
-.slotElTable2 :deep(.normalElTable .evenrow) {
-  background-color: #f6f6f6;
+  :deep(.normalElTable) {
+    /* 設置單數行 class */
+    .oddrow {
+      background-color: #fff;
+    }
+    /* 設置雙數行 class */
+    .evenrow {
+      background-color: #f6f6f6;
+    }
+  }
 }
 .slotElTable3 {
   margin-bottom: 30px;
 }
 .slotElTable4 {
   margin-bottom: 60px;
-}
-.slotElTable4 :deep(.normalElTable .headerCellClass) {
-  background: #cffcc9;
-  color: #4808f8;
-}
-/* 設置單數行 class */
-.slotElTable4 :deep(.normalElTable .oddrow) {
-  background-color: rgb(223, 247, 7);
-  color: rgb(17, 5, 5);
-}
-/* 設置雙數行 class */
-.slotElTable4 :deep(.normalElTable .evenrow) {
-  background-color: #be022b;
-  color: #fff;
+  :deep(.normalElTable) {
+    .headerCellClass {
+      background: #cffcc9;
+      color: #4808f8;
+    }
+    /* 設置單數行 class */
+    .oddrow {
+      background-color: rgb(223, 247, 7);
+      color: rgb(17, 5, 5);
+    }
+    /* 設置雙數行 class */
+    .evenrow {
+      background-color: #be022b;
+      color: #fff;
+    }
+  }
 }
 </style>
