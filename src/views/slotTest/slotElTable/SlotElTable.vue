@@ -66,6 +66,7 @@
         </el-table-column>
         <el-table-column
           prop="accountBalance"
+          :formatter="fnNumberFormatter"
           label="帳面餘額"
           align="right"
           min-width="7%"
@@ -156,7 +157,7 @@ const tableData1 = [
     transactionDirections: "ＡＴＭ轉",
     payoutAmount: "",
     deposits: "888",
-    accountBalance: "	1,784",
+    accountBalance: "1784",
     ticketNumber: "",
     note: "8004000028000721 004",
   },
@@ -168,7 +169,7 @@ const tableData1 = [
     transactionDirections: "ＡＴＭ轉",
     payoutAmount: "",
     deposits: "888",
-    accountBalance: "2,672",
+    accountBalance: "2672",
     ticketNumber: "",
     note: "8004000028000721 004",
   },
@@ -180,7 +181,7 @@ const tableData1 = [
     transactionDirections: "ＡＴＭ轉",
     payoutAmount: "",
     deposits: "888",
-    accountBalance: "3,560",
+    accountBalance: "3560",
     ticketNumber: "",
     note: "8004000028000721 004",
   },
@@ -192,7 +193,7 @@ const tableData1 = [
     transactionDirections: "ＡＴＭ轉",
     payoutAmount: "",
     deposits: "888",
-    accountBalance: "4,448",
+    accountBalance: "4448",
     ticketNumber: "",
     note: "8004000028000721 004",
   },
@@ -212,6 +213,23 @@ const tableData1 = [
 ];
 
 const oDefaultSort1 = reactive({ prop: "accountDate", order: "ascending" });
+
+const fnNumberFormatter = (row, column, cellValue, index) => {
+  const sNum = cellValue + "";
+  const aNumArr = sNum.split("").reverse();
+  const aOverArr = [];
+  let i = 0;
+  aNumArr.forEach((item) => {
+    i++;
+    if (i > 3) {
+      i = 1;
+      aOverArr.push(",");
+    }
+    aOverArr.push(item);
+  });
+  aOverArr.reverse();
+  return aOverArr.join("");
+};
 
 const tableData2 = [
   {
