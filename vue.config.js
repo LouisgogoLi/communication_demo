@@ -18,7 +18,7 @@ module.exports = {
   configureWebpack: {
     devtool: "source-map",
     plugins: [
-      AutoImport({ resolvers: [ElementPlusResolver()] }),
+      AutoImport({ resolvers: [ElementPlusResolver({ importStyle: false })] }),
       Components({ resolvers: [ElementPlusResolver()] }),
     ],
   },

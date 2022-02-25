@@ -1,6 +1,10 @@
 <template>
-  <HeaderComponet />
-  <router-view />
+  <el-config-provider :locale="localeElement">
+    <div v-loading>
+      <HeaderComponet />
+      <router-view />
+    </div>
+  </el-config-provider>
 </template>
 
 <script>
@@ -11,6 +15,35 @@ export default {
 
 <script setup>
 import HeaderComponet from "@/components/publicComponents/header/HeaderComponet.vue";
+
+import { ref, computed, watch, onMounted } from "vue";
+import zhTwElement from "element-plus/lib/locale/lang/zh-tw";
+import enElement from "element-plus/lib/locale/lang/en";
+const localeElement = ref(zhTwElement);
+import { useStore } from "vuex";
+const store = useStore();
+const sLanguage = computed(() => {
+  return store.getters.getLanguage;
+});
+
+const fnChangeLanguage = () => {
+  if (sLanguage.value === "en") {
+    localeElement.value = enElement;
+  } else if (sLanguage.value === "zh_tw") {
+    localeElement.value = zhTwElement;
+  }
+};
+
+watch(
+  () => sLanguage.value,
+  () => {
+    fnChangeLanguage();
+  }
+);
+
+onMounted(() => {
+  fnChangeLanguage();
+});
 </script>
 
 <style lang="scss">
@@ -39,6 +72,24 @@ nav {
 
     &.router-link-exact-active {
       color: #42b983;
+    }
+  }
+}
+.el-loading-mask.is-fullscreen {
+  .el-loading-spinner {
+    background: url("~@/assets/gif/animated-love-image-0025.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 100px;
+    height: 100px;
+    width: 100%;
+    .circular {
+      display: none;
+    }
+    .el-loading-text {
+      margin: 100px 0;
+      font-size: 16px;
+      color: #f8fafb;
     }
   }
 }

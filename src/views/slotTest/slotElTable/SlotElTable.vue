@@ -4,6 +4,11 @@
       class="slotElTable1"
       :propsTableData="tableData1"
       :propsDefaultSort="oDefaultSort1"
+      v-loading="bLoading"
+      element-loading-text="測試loading"
+      element-loading-background="rgba(0, 0, 0, 0.3)"
+      :element-loading-svg="svg"
+      element-loading-svg-view-box="-10, -10, 50, 50"
     >
       <template #tableDefault>
         <el-table-column
@@ -213,6 +218,22 @@ const tableData1 = [
 ];
 
 const oDefaultSort1 = reactive({ prop: "accountDate", order: "ascending" });
+
+const svg = ref(`
+        <path class="path" d="
+          M 30 15
+          L 28 17
+          M 25.61 25.61
+          A 15 15, 0, 0, 1, 15 30
+          A 15 15, 0, 1, 1, 27.99 7.5
+          L 15 15
+        " style="stroke-width: 4px; fill: rgba(0, 0, 0, 0)"/>
+      `);
+
+const bLoading = ref(true);
+setTimeout(() => {
+  bLoading.value = false;
+}, 2000);
 
 const fnNumberFormatter = (row, column, cellValue, index) => {
   const sNum = cellValue + "";

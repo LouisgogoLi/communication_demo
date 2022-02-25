@@ -59,4 +59,16 @@ const router = createRouter({
   routes,
 });
 
+import {
+  showElLoading,
+  hideElLoading,
+} from "@/common/methodCommon/elGlobalMethod";
+
+router.beforeEach(() => {
+  showElLoading();
+  setTimeout(() => {
+    hideElLoading();
+  }, 1000);
+});
+
 export default router;

@@ -94,14 +94,14 @@ const props = defineProps({
   /* 設置單數行 class */
   :deep(.oddrow) {
     background-color: #f6f6f6;
-    &:hover > td {
+    &:hover td {
       background-color: transparent !important;
     }
   }
   /* 設置雙數行 class */
   :deep(.evenrow) {
     background-color: #f8fafb;
-    &:hover > td {
+    &:hover td {
       background-color: transparent !important;
     }
   }
