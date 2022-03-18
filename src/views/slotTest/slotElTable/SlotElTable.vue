@@ -115,6 +115,7 @@
         <el-table-column prop="note" label="備註"> </el-table-column>
       </template>
     </SlotTable>
+    <button @click="testPrint">列印pdf</button>
   </div>
 </template>
 
@@ -308,6 +309,37 @@ const tableData4 = [
     note: "我是備註文字4",
   },
 ];
+
+import html2canvas from "html2canvas";
+import JsPDF from "jspdf";
+const testPrint = () => {
+  html2canvas(document.querySelector("body")).then((canvas) => {
+    document.body.appendChild(canvas);
+    console.log(canvas.toDataURL("image/png"));
+    let contentWidth = canvas.width;
+    let contentHeight = canvas.height;
+    let pageHeight = (contentWidth / 592.28) * 841.89;
+    let leftHeight = contentHeight;
+    let position = 0;
+    let imgWidth = 595.28;
+    let imgHeight = (592.28 / contentWidth) * contentHeight;
+    let pageData = canvas.toDataURL("image/jpeg", 1.0);
+    let PDF = new JsPDF("", "pt", "a4");
+    if (leftHeight < pageHeight) {
+      PDF.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight);
+    } else {
+      while (leftHeight > 0) {
+        PDF.addImage(pageData, "JPEG", 0, position, imgWidth, imgHeight);
+        leftHeight -= pageHeight;
+        position -= 841.89;
+        if (leftHeight > 0) {
+          PDF.addPage();
+        }
+      }
+    }
+    PDF.save("測試" + ".pdf");
+  });
+};
 </script>
 
 <style lang="scss" scoped>

@@ -72,5 +72,13 @@
         "List": []
       }
     ]
+  },
+  {
+    "tab_id": "7",
+    "router_name": "echartTest",
+    "name": "EchartTest",
+    "click": true,
+    "auth": true,
+    "List": []
   }
 ]

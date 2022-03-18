@@ -48,6 +48,11 @@ const routes = [
     component: () => import("@/views/elementTest/tableView/TableView.vue"),
   },
   {
+    path: "/echartTest",
+    name: "echartTest",
+    component: () => import("@/views/echartTest/EchartTest.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: () => import("@/views/NotFound.vue"),
