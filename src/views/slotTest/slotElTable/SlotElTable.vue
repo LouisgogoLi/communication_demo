@@ -311,33 +311,58 @@ const tableData4 = [
 ];
 
 import html2canvas from "html2canvas";
-import JsPDF from "jspdf";
+import jsPDF from "jspdf";
 const testPrint = () => {
   html2canvas(document.querySelector("body")).then((canvas) => {
     document.body.appendChild(canvas);
     console.log(canvas.toDataURL("image/png"));
-    let contentWidth = canvas.width;
-    let contentHeight = canvas.height;
-    let pageHeight = (contentWidth / 592.28) * 841.89;
-    let leftHeight = contentHeight;
-    let position = 0;
-    let imgWidth = 595.28;
-    let imgHeight = (592.28 / contentWidth) * contentHeight;
-    let pageData = canvas.toDataURL("image/jpeg", 1.0);
-    let PDF = new JsPDF("", "pt", "a4");
-    if (leftHeight < pageHeight) {
-      PDF.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight);
-    } else {
-      while (leftHeight > 0) {
-        PDF.addImage(pageData, "JPEG", 0, position, imgWidth, imgHeight);
-        leftHeight -= pageHeight;
-        position -= 841.89;
-        if (leftHeight > 0) {
-          PDF.addPage();
-        }
-      }
+
+    let pdf = new jsPDF("p", "mm", "a4"); //A4紙，縱向
+
+    let ctx = canvas.getContext("2d"),
+      a4w = 190,
+      a4h = 257, //A4大小，210mm x 297mm，左右保留10mm，上下保留20mm的邊距，顯示區域190x257
+      imgHeight = Math.floor((a4h * canvas.width) / a4w), //按A4顯示比例換算一頁圖像的像素高度
+      renderedHeight = 0;
+
+    while (renderedHeight < canvas.height) {
+      let page = document.createElement("canvas");
+      page.width = canvas.width;
+      page.height = Math.min(imgHeight, canvas.height - renderedHeight); //可能內容不足一頁
+
+      //用getImageData剪裁指定區域，畫面到前面創建的canvas對象中
+      page
+        .getContext("2d")
+        .putImageData(
+          ctx.getImageData(
+            0,
+            renderedHeight,
+            canvas.width,
+            Math.min(imgHeight, canvas.height - renderedHeight)
+          ),
+          0,
+          0
+        );
+
+      //添加圖像到頁面，保留10mm/20mm邊距
+      pdf.addImage(
+        page.toDataURL("image/jpeg", 1.0),
+        "JPEG",
+        10,
+        20,
+        a4w,
+        Math.min(a4h, (a4w * page.height) / page.width)
+      );
+
+      //添加頁腳，位置和內容自己決定
+      pdf.text("https://www.google.com/", 140, 288);
+
+      renderedHeight += imgHeight;
+      if (renderedHeight < canvas.height) {
+        pdf.addPage();
+      } //如果後面還有內容，添加一個空頁
     }
-    PDF.save("測試" + ".pdf");
+    pdf.save("content.pdf");
   });
 };
 </script>
