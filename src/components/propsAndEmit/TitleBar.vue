@@ -1,5 +1,7 @@
 <template>
-  <a class="title" @click="props.propsHandListShow">點選測試Title</a>
+  <a class="title" @click="props.propsHandListShow" data-test="titlebar_title"
+    >點選測試Title</a
+  >
 </template>
 
 <script>

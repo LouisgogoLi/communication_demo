@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>測試Props傳值</h1>
-    <h2>{{ props.propsTestName }}</h2>
+    <h2 data-test="propsTestName">{{ props.propsTestName }}</h2>
   </div>
 </template>
 
