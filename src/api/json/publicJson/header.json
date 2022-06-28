@@ -33,13 +33,21 @@
   },
   {
     "tab_id": "4",
-    "router_name": "SlotTest",
-    "name": "SlotTest",
+    "router_name": "1",
+    "name": "Slot測試",
     "click": true,
     "auth": true,
     "List": [
       {
         "tab_id": "4_1",
+        "router_name": "SlotTest",
+        "name": "SlotTest",
+        "click": true,
+        "auth": true,
+        "List": []
+      },
+      {
+        "tab_id": "4_2",
         "router_name": "SlotElTable",
         "name": "SlotELTable測試",
         "click": true,
