@@ -1,8 +1,14 @@
 <template>
   <el-config-provider :locale="localeElement">
     <div v-loading>
-      <HeaderComponet />
-      <router-view />
+      <el-container>
+        <el-header>
+          <HeaderComponet />
+        </el-header>
+        <el-main>
+          <router-view />
+        </el-main>
+      </el-container>
     </div>
   </el-config-provider>
 </template>

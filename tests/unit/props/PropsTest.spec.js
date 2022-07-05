@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import PropsTest from "@/components/propsApp/PropsTest.vue";
+import PropsTest from "@/components/componentTest/propsAndEmitTest/propsApp/PropsTest.vue";
 
 describe("測試PropsTest元件", () => {
   it("測試props會不會通過", () => {

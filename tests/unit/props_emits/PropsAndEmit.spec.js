@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import PropsAndEmit from "@/views/propsAndEmit/PropsAndEmit.vue";
+import PropsAndEmit from "@/views/componentTest/propsAndEmitTest/propsAndEmit/PropsAndEmit.vue";
 
 describe("測試PropsAndEmit元件", () => {
   let wrapper;

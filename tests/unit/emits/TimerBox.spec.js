@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import TimerBox from "@/components/propsAndEmit/TimerBox.vue";
+import TimerBox from "@/components/componentTest/propsAndEmitTest/propsAndEmit/TimerBox.vue";
 import { nextTick } from "vue";
 
 describe("測試TimerBox元件", () => {

@@ -9,7 +9,7 @@ export default {
 </script>
 
 <script setup>
-import ParentComponent from "@/components/provideInjectTest/ParentComponent.vue";
+import ParentComponent from "@/components/componentTest/provideInjectTest/ParentComponent.vue";
 import { provide, ref, reactive, readonly } from "vue";
 
 const sLocation = ref("North Pole");

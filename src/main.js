@@ -13,4 +13,8 @@ const app = createApp(App);
 import { fnToDoDirective } from "@/common/directiveCommon";
 fnToDoDirective(app);
 
-app.use(i18n).use(store).use(router).mount("#app");
+app.use(i18n).use(store).use(router);
+
+router.isReady().then(() => {
+  app.mount("#app");
+});

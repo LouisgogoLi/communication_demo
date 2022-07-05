@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import EmitTest from "@/components/propsAndEmit/EmitTest.vue";
+import EmitTest from "@/components/componentTest/propsAndEmitTest/propsAndEmit/EmitTest.vue";
 
 describe("測試EmitTest元件", () => {
   let wrapper;

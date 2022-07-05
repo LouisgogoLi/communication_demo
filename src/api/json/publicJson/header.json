@@ -9,37 +9,71 @@
   },
   {
     "tab_id": "1",
-    "router_name": "PropsApp",
-    "name": "PropsApp",
+    "router_name": "1",
+    "name": "元件基本溝通測試",
     "click": true,
     "auth": true,
-    "List": []
+    "List": [
+      {
+        "tab_id": "1_1",
+        "router_name": "1_1",
+        "name": "Props跟Emit測試",
+        "click": true,
+        "auth": true,
+        "List": [
+          {
+            "tab_id": "1_1_1",
+            "router_name": "PropsApp",
+            "name": "PropsApp",
+            "click": true,
+            "auth": true,
+            "List": []
+          },
+          {
+            "tab_id": "1_1_2",
+            "router_name": "PropsAndEmit",
+            "name": "PropsAndEmit",
+            "click": true,
+            "auth": true,
+            "List": []
+          }
+        ]
+      },
+      {
+        "tab_id": "1_2",
+        "router_name": "DirectiveTest",
+        "name": "DirectiveTest",
+        "click": true,
+        "auth": true,
+        "List": []
+      },
+      {
+        "tab_id": "1_3",
+        "router_name": "ProvideInjectTest",
+        "name": "ProvideInjectTest",
+        "click": true,
+        "auth": true,
+        "List": []
+      },
+      {
+        "tab_id": "1_4",
+        "router_name": "address_for_crud",
+        "name": "地址for迴圈crud",
+        "click": true,
+        "auth": true,
+        "List": []
+      }
+    ]
   },
   {
     "tab_id": "2",
-    "router_name": "PropsAndEmit",
-    "name": "PropsAndEmit",
-    "click": true,
-    "auth": true,
-    "List": []
-  },
-  {
-    "tab_id": "3",
-    "router_name": "DirectiveTest",
-    "name": "DirectiveTest",
-    "click": true,
-    "auth": true,
-    "List": []
-  },
-  {
-    "tab_id": "4",
-    "router_name": "1",
+    "router_name": "2",
     "name": "Slot測試",
     "click": true,
     "auth": true,
     "List": [
       {
-        "tab_id": "4_1",
+        "tab_id": "2_1",
         "router_name": "SlotTest",
         "name": "SlotTest",
         "click": true,
@@ -47,7 +81,7 @@
         "List": []
       },
       {
-        "tab_id": "4_2",
+        "tab_id": "2_2",
         "router_name": "SlotElTable",
         "name": "SlotELTable測試",
         "click": true,
@@ -57,22 +91,14 @@
     ]
   },
   {
-    "tab_id": "5",
-    "router_name": "ProvideInjectTest",
-    "name": "ProvideInjectTest",
-    "click": true,
-    "auth": true,
-    "List": []
-  },
-  {
-    "tab_id": "6",
+    "tab_id": "3",
     "router_name": "elementTest",
-    "name": "elementTest",
+    "name": "element元件測試",
     "click": false,
     "auth": true,
     "List": [
       {
-        "tab_id": "6_1",
+        "tab_id": "3_1",
         "router_name": "tableView",
         "name": "elementTable測試",
         "click": true,
@@ -82,9 +108,9 @@
     ]
   },
   {
-    "tab_id": "7",
+    "tab_id": "4",
     "router_name": "echartTest",
-    "name": "EchartTest",
+    "name": "Echart測試",
     "click": true,
     "auth": true,
     "List": []

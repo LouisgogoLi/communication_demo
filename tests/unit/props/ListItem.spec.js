@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import ListItem from "@/components/propsAndEmit/ListItem.vue";
+import ListItem from "@/components/componentTest/propsAndEmitTest/propsAndEmit/ListItem.vue";
 
 describe("測試ListItem元件", () => {
   let wrapper;

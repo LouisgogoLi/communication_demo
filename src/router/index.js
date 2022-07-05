@@ -13,19 +13,30 @@ const routes = [
     redirect: { name: "Home" },
   },
   {
-    path: "/PropsApp",
+    path: "/componentTest/propsAndEmitTest/PropsApp",
     name: "PropsApp",
-    component: () => import("@/views/propsApp/PropsApp.vue"),
+    component: () =>
+      import("@/views/componentTest/propsAndEmitTest/propsApp/PropsApp.vue"),
   },
   {
-    path: "/PropsAndEmit",
+    path: "/componentTest/propsAndEmitTest/PropsAndEmit",
     name: "PropsAndEmit",
-    component: () => import("@/views/propsAndEmit/PropsAndEmit.vue"),
+    component: () =>
+      import(
+        "@/views/componentTest/propsAndEmitTest/propsAndEmit/PropsAndEmit.vue"
+      ),
   },
   {
-    path: "/DirectiveTest",
+    path: "/componentTest/DirectiveTest",
     name: "DirectiveTest",
-    component: () => import("@/views/directiveTest/DirectiveTest.vue"),
+    component: () =>
+      import("@/views/componentTest/directiveTest/DirectiveTest.vue"),
+  },
+  {
+    path: "/componentTest/ProvideInjectTest",
+    name: "ProvideInjectTest",
+    component: () =>
+      import("@/views/componentTest/provideInjectTest/ProvideInjectTest.vue"),
   },
   {
     path: "/SlotTest",
@@ -36,11 +47,6 @@ const routes = [
     path: "/SlotTest/slotElTable",
     name: "SlotElTable",
     component: () => import("@/views/slotTest/slotElTable/SlotElTable.vue"),
-  },
-  {
-    path: "/ProvideInjectTest",
-    name: "ProvideInjectTest",
-    component: () => import("@/views/provideInjectTest/ProvideInjectTest.vue"),
   },
   {
     path: "/elementTest/tableView",
