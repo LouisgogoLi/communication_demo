@@ -39,6 +39,19 @@ const routes = [
       import("@/views/componentTest/provideInjectTest/ProvideInjectTest.vue"),
   },
   {
+    path: "/componentTest/AddressForCrud",
+    name: "address_for_crud",
+    component: () =>
+      import("@/views/componentTest/addressForCrud/AddressForCrud.vue"),
+  },
+  {
+    path: "/componentTest/AddressForCrud/AddressList",
+    name: "address_list",
+    component: () =>
+      import("@/views/componentTest/addressForCrud/AddressList.vue"),
+    props: (route) => ({ showUI: route.query.showUI }),
+  },
+  {
     path: "/SlotTest",
     name: "SlotTest",
     component: () => import("@/views/slotTest/SlotTest.vue"),

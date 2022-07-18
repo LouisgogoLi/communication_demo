@@ -2,7 +2,7 @@
   <el-config-provider :locale="localeElement">
     <div v-loading>
       <el-container>
-        <el-header>
+        <el-header v-if="route.query.showUI === 'false' ? false : true">
           <HeaderComponet />
         </el-header>
         <el-main>
@@ -21,6 +21,9 @@ export default {
 
 <script setup>
 import HeaderComponet from "@/components/publicComponents/header/HeaderComponet.vue";
+
+import { useRoute } from "vue-router";
+const route = useRoute();
 
 import { ref, computed, watch, onMounted } from "vue";
 import zhTwElement from "element-plus/lib/locale/lang/zh-tw";
