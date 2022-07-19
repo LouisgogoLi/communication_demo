@@ -177,21 +177,22 @@ const deleteAddress = (index) => {
 
 //重置
 const fnReset = () => {
-  oTwAddress.addressList.length = 0;
   sTime = Date.now().toString();
-  oTwAddress.addressList.push({
-    id: sTime,
-    aCity: cityList.twzip.city,
-    aArea: [],
-    sCity: "",
-    sArea: "",
-    sZip: "",
-    sAddress: "",
-    sErrorCityMessage: "",
-    sErrorAreaMessage: "",
-    sErrorAddressMessage: "",
-    warnRef: null,
-  });
+  oTwAddress.addressList = [
+    {
+      id: sTime,
+      aCity: cityList.twzip.city,
+      aArea: [],
+      sCity: "",
+      sArea: "",
+      sZip: "",
+      sAddress: "",
+      sErrorCityMessage: "",
+      sErrorAreaMessage: "",
+      sErrorAddressMessage: "",
+      warnRef: null,
+    },
+  ];
 };
 
 //清空所有值
