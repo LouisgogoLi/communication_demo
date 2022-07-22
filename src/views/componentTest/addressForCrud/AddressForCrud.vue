@@ -6,6 +6,7 @@
   <div
     v-for="(addressItem, index) in oTwAddress.addressList"
     :key="addressItem.id"
+    data-test="addressList"
   >
     <div class="flex-container">
       <input
@@ -18,6 +19,7 @@
         v-model="addressItem.sCity"
         @change="fnCityChange($event, index)"
         @blur="handleBlur($event, index, 'city', 'sCity', 'sErrorCityMessage')"
+        data-test="address_city"
       >
         <option disabled value="">請選擇縣市</option>
         <option
@@ -32,6 +34,7 @@
         v-model="addressItem.sArea"
         @change="fnAreaChange($event, index)"
         @blur="handleBlur($event, index, 'area', 'sArea', 'sErrorAreaMessage')"
+        data-test="address_area"
       >
         <option disabled value="">請選擇區域</option>
         <option
@@ -54,6 +57,7 @@
             'sErrorAddressMessage'
           )
         "
+        data-test="address_detail"
       />
       <img
         src="@/assets/images/plus.png"
@@ -61,35 +65,46 @@
         width="25"
         height="25"
         @click="addAddress()"
+        data-test="address_add"
       />
       <img
         src="@/assets/images/minus.png"
         alt="刪除"
         style="width: 25px; height: 25px"
         @click="deleteAddress(index)"
-        v-show="oTwAddress.addressList.length === 1 ? false : true"
+        v-if="oTwAddress.addressList.length === 1 ? false : true"
+        data-test="address_delete"
       />
       <div
         style="width: 25px; height: 25px"
-        v-show="oTwAddress.addressList.length === 1 ? true : false"
+        v-if="oTwAddress.addressList.length === 1 ? true : false"
       ></div>
     </div>
     <div :ref="(el) => setItemRef(el, index)">
-      <span v-if="addressItem.sErrorCityMessage" class="warn-span">{{
-        addressItem.sErrorCityMessage
-      }}</span>
-      <span v-if="addressItem.sErrorAreaMessage" class="warn-span">{{
-        addressItem.sErrorAreaMessage
-      }}</span>
-      <span v-if="addressItem.sErrorAddressMessage" class="warn-span">{{
-        addressItem.sErrorAddressMessage
-      }}</span>
+      <span
+        v-if="addressItem.sErrorCityMessage"
+        class="warn-span"
+        data-test="address_errorCity"
+        >{{ addressItem.sErrorCityMessage }}</span
+      >
+      <span
+        v-if="addressItem.sErrorAreaMessage"
+        class="warn-span"
+        data-test="address_errorArea"
+        >{{ addressItem.sErrorAreaMessage }}</span
+      >
+      <span
+        v-if="addressItem.sErrorAddressMessage"
+        class="warn-span"
+        data-test="address_errorAddress"
+        >{{ addressItem.sErrorAddressMessage }}</span
+      >
     </div>
   </div>
   <div style="padding-top: 30px">
     <button @click="fnLocalStorageSubmit()">localStorage暫存</button>
     <button @click="fnLocalStorageClear()">localStorage暫存清空</button>
-    <button @click="fnSubmit()">表單送出</button>
+    <button @click="fnSubmit()" data-test="address_summit">表單送出</button>
   </div>
 </template>
 
