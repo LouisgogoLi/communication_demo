@@ -56,8 +56,10 @@ import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
 
-import { ref } from "vue";
-const activeIndex = ref(route.name);
+import { computed } from "vue";
+const activeIndex = computed(() => {
+  return route.name;
+});
 
 const handleSelect = (key) => {
   router.push({ name: key });
